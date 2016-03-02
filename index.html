@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Technology for Product Management</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .right {
+        float: right;
+        margin-left: 1em;
+      }
+      .pushdown {
+        margin-top: 12em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+#tech ~ pm
+## getting under the hood
+        @pshah
+
+---
+## What should a PM know about Tech?
+---
+layout: false
+.left-column[
+  ## Agenda:
+]
+.right-column[
+  Ingredients:
+
+- Under the Hood
+
+- Product Development Process
+
+- Stack(s)
+
+- All Mobile, All the time
+
+- Patterns in Data and Design
+
+- Coding, Testing
+
+- Cycle of DevOps
+
+- Case Study: NIST
+
+.footnote[.red[*] No cookie-cutter approach]
+]
+
+???
+<pre>      
+Our hypothetical product
+Looking at the stack - web tier
+Looking at the stack - application tier
+Looking at the stack - persistence tier
+Looking at the stack - other services
+Development tools - source code repository
+Development tools - integrated development environment
+Development tools - unit tests
+Development tools - mocked services
+Development tools - continuous integration server
+Feature development - task estimation and selection
+Feature development - breaking down the problem
+Feature development - writing unit tests
+Feature development - writing the code
+Feature development - feedback loops
+Feature development - peer code review
+Feature development - QA and UAT
+</pre>  
+        
+---
+
+layout: false
+.left-column[
+  ## Under the Hood
+ 
+]
+        
+--
+        
+.right-column[
+![alt text](./images/underthehood.jpeg "Logo Title Text 1")
+        ]
+        
+--
+       
+.right-column[      
+* The underlying implementation of a product (hardware, software, or idea). Implies that the implementation is not intuitively obvious from the appearance, but the speaker is about to enable the listener to grok it. "Let's now look under the hood to see how ...."
+]
+        
+--
+        
+.right-column[  
+* Can also imply that the implementation is much simpler than the appearance would indicate: "Under the hood, we are just fork/execing the shell."
+]
+
+---
+layout: false
+.left-column[
+  ## Product Development Process
+ 
+]
+        
+--
+        
+.right-column[      
+### Conceptual Product Development
+- Identify Customer Needs             
+- Generate Product Concepts             
+- Perform Business Justification        
+- Selection of Product Concept
+]
+--  
+        
+.right-column[  
+### Technical Product Development
+
+- Detailed Development Plan
+- Sprint Planning
+- Unit/QA/Regression Testing
+- Release Management 
+]
+
+--
+.right-column[        
+        __Keep Improving the cycle between Conceptual Product Development to Technical Product Development.__
+]
+        
+--
+.right-column[         
+![alt text](./images/betheball.jpeg "betheball")
+]
+        
+???
+        Improving the product development process. It will always be impossible to know in advance exactly what completing a significant iteration will entail, but there is always room, as a development team, to improve in breaking up and scoping complex projects. This takes time and requires the team to maintain steady focus on collective self analysis. So while your first several product hypotheses may fail, your team should get increasingly efficient in testing each new hypotheses.
+        
+        Every day, we run a daily 15 minute team standup, which is generally a standard part of the agile development process. In this meeting, we have a dedicated Project Manager who runs each session and asks 3 key questions 1) What did you work on yesterday? 2) What will you be working on today? 3) Are there any problems hindering you from completing your work?
+        
+---
+template: inverse
+
+## Just the Stacks?
+---
+name: how
+
+.left-column[
+  ## Evolution of the Stack
+### LAMP
+### MEAN
+]
+
+--
+
+.right-column[
+
+![alt text](./images/lampmean.jpg "LampMean")
+
+]
+        
+--
+.right-column[
+
+![alt text](./images/nodeperf.jpg "Node")
+
+]      
+
+???
+
+Comparatively to LAMP, the database layer is replaced completely with JSON storage using MongoDB. JSON is the native data language of JavaScript. While relatively young, the framework has a growing number of supporters.
+
+This stack is basically a JavaScript lover’s dream.
+
+Using JavaScript for both the front and back end however may make it easier for some teams to easily switch developing between the two. It creates a more homogeneous workflow. This is especially important when you have one or two full stack developers working on the application as a whole.
+        
+Node.JS has an advantage of being event-driven (illustrated above). This allows many concurrent requests with less slowdown. Traditional Apache setups are multi-threaded and resource heavy. As a result, LAMP can be slow.
+
+One common touted advantage of using JavaScript for both the server and the client is code reuse.
+
+While it sounds good in theory, it’s rarely seen in practice. Separation of concerns is a very good thing. Keeping server and client codebases separate can have security benefits. It’s just not a common case to have to move a function from server to client.
+
+Using JavaScript for both the front and back end however may make it easier for some teams to easily switch developing between the two. It creates a more homogeneous workflow. This is especially important when you have one or two full stack developers working on the application as a whole.
+
+It can be quite a challenge to switch between using PHP or Python for the server, then having to use JavaScript and HTML for the client. If you only know JavaScript and nothing else (which could be the case for a new programmer), then MEAN is the easier choice.
+
+
+
+---
+
+.left-column[
+  ## It's all Mobile these days
+
+]
+
+        
+![alt text](./images/ballbearings.jpg "Ball Bearings")
+
+--
+        
+![alt text](./images/newmobilestack.jpg "New Mobile Stack")
+
+---
+
+.left-column[
+  ## Mobile Clients
+  ### Decisions
+  ### Tradeoffs
+
+]
+
+--
+        
+.right-column[
+### Native Options
+- iOS Objective-C, Swift
+- Android Java
+        ]
+--
+.right-column[
+### Web Views/Hybrid
+- Responsive Design
+- Sencha, JQuery Mobile, Angular/Cordova etc. 
+        ]
+
+--
+.right-column[
+### Native-ish
+- [React Native by Facebook](https://facebook.github.io/react-native/showcase.html  "React Native Showcase")
+- Xamarin
+        ]
+--
+        
+Worth Downloading -[React Playground](https://itunes.apple.com/us/app/react-native-playground/id1002032944?mt=8 "React Native Playground")
+        
+???
+    
+    "Apache Cordova is presently a more mature and stable technology that lets you write a common UI layer using web technologies, whereas React Native is much newer and still requires you to write distinct UI layers," Microsoft said. "If your app requires native UI and you enjoy the excitement of a rapidly evolving JavaScript platform, then React Native might be an option to consider."
+    The news that Visual Studio proper won't support React Native came exactly one week before Microsoft announced it was buying Xamarin Inc., which provides cross-platform tooling for creating mobile apps with C# -- tooling that has become more and more integrated with Visual Studio.
+    Considering that Xamarin itself recently acquired RoboVM, which uses Java to build cross-platform mobile apps, there seemingly was less incentive for Microsoft to include yet another cross-platform mobile technology in Visual Studio.
+
+
+---
+# Patterns in Data and Design
+
+### Mongo (NoSQL)
+- Given a set of Documents of Students:
+```mongo
+{ "_id" : 1, "score" : [ -1, 3 ] }
+{ "_id" : 2, "score" : [ 1, 5 ] }
+{ "_id" : 3, "score" : [ 5, 5 ] }
+```
+- Retrieving these Documents
+```mongo
+> db.students.find( { score: { $gt: 0, $lt: 2 } } )
+```
+        
+- Yields
+```mongo
+{ "_id" : 1, "score" : [ -1, 3 ] }
+{ "_id" : 2, "score" : [ 1, 5 ] }       
+```
+???
+
+In the document with _id equal to 1, the score: [ -1, 3 ] meets the conditions because the element -1 meets the $lt: 2 condition and the element 3 meets the $gt: 0 condition.
+In the document with _id equal to 2, the score: [ 1, 5 ] meets the conditions because the element 1 meets both the $lt: 2 condition and the $gt: 0 condition.
+
+
+---
+# Patterns in Data and Design        
+### SQL Syntax
+- Given a set of Rows in a Table of Students:
+```sql
+INSERT INTO marks (id, name, english, science, maths) VALUES (NULL, ‘Mike’, ‘76’, ‘62’, ‘85’);
+INSERT INTO marks (id, name, english, science, maths) VALUES (NULL, ‘Maria’, ‘52’, ‘88’, ‘77’);
+INSERT INTO marks (id, name, english, science, maths) VALUES (NULL, ‘Sandra’, ‘89’, ‘90’, ‘83’);
+```
+- Selecting that students with maths less than 80
+<pre>
+select name,science, maths from marks where maths > 80 
+and science < 70
+</pre>
+- Yields                              
+```sql
+Mike, 62, 85                   
+```
+---
+# Patterns in Data and Design        
+### Tradeoffs between Relational and 'Non-Relational/No SQL'
+#### JSON = Javascript Object Notation, Document Format
+
+![alt text](./images/sqlnosql.png "SQL vs NoSQL")
+                                                                       
+---
+# Code Writing and Testing
+
+```javascript
+var expect = require("chai").expect;
+
+var isPalindrome = function(str) {
+	if (str) {
+        str = str.toLowerCase().trim();
+        return str == str.split('').reverse().join('');
+    }
+    return false;
+};
+```
+--        
+### We test using an assertion.  Do we expect this to be true ?
+#### Test Driven Development is the Link between User Stories and the Product !
+                                                                       
+```javascript      
+expect(isPalindrome('Racecar')).to.be.true;
+expect(isPalindrome('Pizza')).to.be.false;
+```       
+---
+### DevOps Lifecycle
+
+![alt text](./images/devops.jpg "DevOps")
+
+
+???
+The DevOps Lifecycle Looks Like This:
+Check in code
+Pull code changes for build
+Run tests (continuous integration server to generate builds and arrange releases): Test individual models, run integration tests, and run user acceptance tests.
+Store artifacts and build repository (repository for storing artifacts, results, and releases)
+Deploy and release (release automation product to deploy apps)
+Configure environment
+Update databases
+Update apps
+Push to users – who receive tested app updates frequently and without interruption
+Application and Network Performance Monitoring (preventive safeguard)
+Rinse and repeat
+---
+### NIST Casestudy:
+
+####Objective:  Perform a Security Assessment for Clients
+#####Requirements:
+- Secure Web Application on Consultants Laptop in v1.0
+- Migrate to Software-As-A-Service in v2.0
+- 300 Questions in Excel Format to be loaded 
+- Question Format will not change
+- Provide Benchmarking Reports as a PDF
+
+####Question:  What stack  LAMP vs. MEAN ?
+####What are the issues/advantages with each choice ?
+
+####Question: What Mobile App solution ? Native, Hybrid, Web ?
+####What are the issues/advantages with each choice ?
+
+---
+# That's all Folks!
+
+Slideshow created with [remark](http://gnab.github.com/remark).
+        
+        
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+---
